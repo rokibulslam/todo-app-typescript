@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Sacramento&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,900&family=Tangerine:wght@400;700&display=swap');
+
+.App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aquamarine;
+  font-family: "Jost", cursive;
+}
+
+.heading{
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 30px 0;
+  color: blueviolet;
+  text-align: center;
+}
+@media (max-width:800px) {
+  .heading{
+    margin: 15px 0;
+    font-size: 35px;
+  }
+}
