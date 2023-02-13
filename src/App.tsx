@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 import "./App.css";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
@@ -7,6 +8,8 @@ import { Todo } from "./todoModel";
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("")
   const [todos, setTodos] = useState<Todo[]>([])
+  const [completedTodos, setCompletedTodos] = useState<Todo[]>([])
+  
   const handleAdd = (e:React.FormEvent) => {
     e.preventDefault()
     if (todo) {
@@ -15,11 +18,18 @@ const App: React.FC = () => {
     }
   }
   return (
-    <div className="App">
-      <span className="heading">Task Manager</span>
-      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList todos={todos} setTodos={setTodos} />
-    </div>
+    <DragDropContext onDragEnd={()=>{}}>
+      <div className="App">
+        <span className="heading">Task Manager</span>
+        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+        <TodoList
+          todos={todos}
+          setTodos={setTodos}
+          setCompletedTodos={setCompletedTodos}
+          completedTodos={completedTodos}
+        />
+      </div>
+    </DragDropContext>
   );
 };
 
