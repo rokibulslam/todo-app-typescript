@@ -41,38 +41,42 @@
 }
 .container{
     display: flex;
+    flex-direction: column;
     width: 90%;
     margin-top: 15px;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
 }
 .todos{
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding: 15px;
-    width: 90%;
-}
-.active-todo{
-    background-color: blueviolet;
-    margin: 15px;
-}
-.removed-todo{
-    background-color: red;
-    margin: 15px;
-    
-}
-.todos-heading{
-    font-size: 20px;
-    color: white;
+   justify-content: center;
 }
 .todo-single{
     display: flex;
+    width: 40%;
     padding: 20px;
     border-radius: 5px;
     margin: 15px;
     background:yellow;
     transition: 0.2s;
 }
+.active-todo{
+
+    padding-bottom: 20px;
+    width: 100%;
+    margin: 15px;
+}
+.todos-heading{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
 .todo-single:hover{
     box-shadow: 0 0 5px black;
     transform: scale(1.03);
